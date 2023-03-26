@@ -2,22 +2,28 @@ import os
 import time
 import tkinter as tk
 from tkinter import ttk
+import threading
 
 def start_countdown():
-    try:
-        hours = int(hours_var.get()) if hours_var.get().isdigit() else 0
-        minutes = int(minutes_var.get()) if minutes_var.get().isdigit() else 0
-        seconds = int(seconds_var.get()) if seconds_var.get().isdigit() else 0
-        total_seconds = hours * 3600 + minutes * 60 + seconds
-    except ValueError:
-        return
+    def countdown():
+        try:
+            hours = int(hours_var.get()) if hours_var.get().isdigit() else 0
+            minutes = int(minutes_var.get()) if minutes_var.get().isdigit() else 0
+            seconds = int(seconds_var.get()) if seconds_var.get().isdigit() else 0
+            total_seconds = hours * 3600 + minutes * 60 + seconds
+        except ValueError:
+            return
 
-    for i in range(total_seconds, -1, -1):
-        remaining_time.set(f"Remaining time: {i // 3600:02d}:{(i % 3600) // 60:02d}:{i % 60:02d}")
-        window.update()
-        time.sleep(1)
+        for i in range(total_seconds, -1, -1):
+            remaining_time.set(f"Remaining time: {i // 3600:02d}:{(i % 3600) // 60:02d}:{i % 60:02d}")
+            window.update()
+            time.sleep(1)
 
-    os.system("shutdown /s /t 1")
+        os.system("shutdown /s /t 1")
+
+    countdown_thread = threading.Thread(target=countdown)
+    countdown_thread.daemon = True
+    countdown_thread.start()
 
 window = tk.Tk()
 window.title("Shutdown Timer")
