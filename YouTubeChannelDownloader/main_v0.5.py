@@ -8,8 +8,27 @@ from googleapiclient.discovery import build
 from pytube import YouTube
 from tqdm import tqdm
 import threading
+import subprocess
 
 print_lock = threading.Lock()
+
+
+def install_dependencies():
+    installed_flag_file = "dependencies_installed.txt"
+
+    if os.path.exists(installed_flag_file):
+        print("Dependencies already installed. Skipping installation.")
+        return
+
+    packages = ["httplib2", "google-auth-httplib2", "google-auth-oauthlib", "google-auth", "google-api-python-client", "pytube", "tqdm"]
+    for package in packages:
+        print(f"Installing {package}...")
+        subprocess.check_call(["pip", "install", package])
+
+    with open(installed_flag_file, "w") as f:
+        f.write("Dependencies installed on: " + time.strftime("%Y-%m-%d %H:%M:%S"))
+
+    print("All dependencies installed.")
 
 
 def get_channel_videos(channel_id, api_key):
@@ -74,14 +93,17 @@ def get_channel_name(channel_id, api_key):
 
 
 def main():
-    api_key = "AIzaSyA75xkx4hWzMsrtJFi5c_Qb5c_ldFur-6I"
-    channel_id = "UCgv4dPk_qZNAbUW9WkuLPSA"
+    install_dependencies()
+
+    api_key = "KEY_HERE"
+    channel_id = "UCdBK94H6oZT2Q7l0-b0xmMg"
     base_output_path = "downloads"
 
     if not os.path.exists(base_output_path):
         os.makedirs(base_output_path)
 
     channel_name = get_channel_name(channel_id, api_key)
+    output_path = os
     output_path = os.path.join(base_output_path, channel_name)
 
     if not os.path.exists(output_path):
