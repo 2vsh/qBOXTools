@@ -14,7 +14,11 @@ print_lock = threading.Lock()
 
 
 def install_dependencies():
-    installed_flag_file = "dependencies_installed.txt"
+    dependencies_dir = "DependenciesCheck"
+    if not os.path.exists(dependencies_dir):
+        os.makedirs(dependencies_dir)
+
+    installed_flag_file = os.path.join(dependencies_dir, "dependencies_installed.txt")
 
     if os.path.exists(installed_flag_file):
         print("Dependencies already installed. Skipping installation.")
@@ -96,14 +100,13 @@ def main():
     install_dependencies()
 
     api_key = "KEY_HERE"
-    channel_id = "UCdBK94H6oZT2Q7l0-b0xmMg"
+    channel_id = "UCgv4dPk_qZNAbUW9WkuLPSA"
     base_output_path = "downloads"
 
     if not os.path.exists(base_output_path):
         os.makedirs(base_output_path)
 
     channel_name = get_channel_name(channel_id, api_key)
-    output_path = os
     output_path = os.path.join(base_output_path, channel_name)
 
     if not os.path.exists(output_path):
@@ -120,3 +123,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
