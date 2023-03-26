@@ -74,7 +74,7 @@ def get_channel_name(channel_id, api_key):
 
 
 def main():
-    api_key = "AIzaSyA75xkx4hWzMsrtJFi5c_Qb5c_ldFur-6I"
+    api_key = "KEY_HERE"
     channel_id = "UCgv4dPk_qZNAbUW9WkuLPSA"
     base_output_path = "downloads"
 
