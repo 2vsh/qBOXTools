@@ -4,7 +4,8 @@ then run!
 
 Opening the terminal to run pip install yt_dlp via the file explorer:
 ![explorer_NfM0NJyyD2](https://github.com/2vsh/qBOXTools/assets/67459159/a227dc6d-cd8a-41f8-a8dd-a08eb579b386)
+![WindowsTerminal_2fNXa8vHKN](https://github.com/2vsh/qBOXTools/assets/67459159/ee660697-01d4-49ea-a822-f2c5978d9584)
 
 
-Option B running:
+Show case of Option B running:
 ![WindowsTerminal_14MwE9yMcy](https://github.com/2vsh/qBOXTools/assets/67459159/712a5b54-607e-42db-95e7-e4de0c055280)
