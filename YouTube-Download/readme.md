@@ -2,7 +2,7 @@ Before starting, make sure python is installed: https://www.python.org/downloads
 Then, make sure yt_dlp is installed by opening the terminal in the directory (right click in the folder where the main.py file is stored, then click terminal) and type "pip install yt_dlp"
 then run!
 
-Opening the terminal:
+Opening the terminal to run pip install yt_dlp via the file explorer:
 ![explorer_NfM0NJyyD2](https://github.com/2vsh/qBOXTools/assets/67459159/a227dc6d-cd8a-41f8-a8dd-a08eb579b386)
 
 
