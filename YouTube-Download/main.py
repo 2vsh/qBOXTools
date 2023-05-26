@@ -17,13 +17,13 @@ def download_channel(url):
 def main():
     print("What would you like to do?")
     print("A) Download a specific video")
-    print("B) Download a full channel's content")
+    print("B) Download a full channel's content or a playlist")
     choice = input("Choose an option (A or B): ")
     if choice.lower() == 'a':
         video_url = input("Enter the video URL: ")
         download_video(video_url)
     elif choice.lower() == 'b':
-        channel_url = input("Enter the channel URL: ")
+        channel_url = input("Enter the channel URL or playlist URL: ")
         download_channel(channel_url)
     else:
         print("Invalid option. Please choose either A or B.")
