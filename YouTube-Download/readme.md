@@ -10,5 +10,5 @@ You can also type cmd in the title bar:
 
 ![WindowsTerminal_2fNXa8vHKN](https://github.com/2vsh/qBOXTools/assets/67459159/ee660697-01d4-49ea-a822-f2c5978d9584)
 
-Show case of Option B running:
+## Showcase of Option B running: ##
 ![WindowsTerminal_14MwE9yMcy](https://github.com/2vsh/qBOXTools/assets/67459159/712a5b54-607e-42db-95e7-e4de0c055280)
