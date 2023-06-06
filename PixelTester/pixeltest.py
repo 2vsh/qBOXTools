@@ -9,7 +9,7 @@ class PixelTest(tk.Tk):
         self.attributes('-fullscreen', True)
         self.configure(background=COLORS[0])
         self.bind("<Escape>", lambda e: self.quit())
-        self.bind("<space>", self.change_color)
+        self.bind("<Key>", self.change_color)
         self.color_index = 0
 
     def change_color(self, event):
